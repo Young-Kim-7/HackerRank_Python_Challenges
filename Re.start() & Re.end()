@@ -1,0 +1,9 @@
+import re
+S = input()
+k = input()
+R = list(re.finditer(f'(?={re.escape(k)})', S))
+if R:
+    for x in R:
+        print((x.start(), x.start()+len(k)-1))
+else:
+    print((-1, -1))
